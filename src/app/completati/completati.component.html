@@ -1,0 +1,8 @@
+<div class="container text-center mt-5">
+  <h1 class="text-center" *ngIf="!onLoad">Caricamento Pagina</h1>
+  <div *ngIf="onLoad">
+    <div *ngFor="let todo of todosArr">
+      <div *ngIf="todo.completed">{{ todo.id }}) {{ todo.title }}</div>
+    </div>
+  </div>
+</div>

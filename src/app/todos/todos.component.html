@@ -1,0 +1,25 @@
+<h1 class="text-center" *ngIf="!onLoad">Caricamento Pagina</h1>
+<div *ngIf="onLoad">
+  <div class="container text-center mt-4">
+    <div *ngFor="let todo of todosArr">
+      <div *ngIf="!todo.completed">
+        {{ todo.id }}) {{ todo.title }}
+        <button
+          type="button"
+          (click)="updateToDoList(todo.id)"
+          class="border-0 bg-white"
+        >
+          ✅
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center mt-5">
+    <input
+      type="text"
+      [(ngModel)]="inputTodo"
+      placeholder="Cosa vuoi fare oggi?"
+    />
+    <button type="button" (click)="addTodo()">+</button>
+  </div>
+</div>
